@@ -2,6 +2,8 @@
 var todaysDate = moment().format("dddd MMM Do YYYY");
 var currentTime = parseInt(moment().format('HH'))
 
+var taskArray = [];
+
 
 //function declarations
 function setColor(){
@@ -17,6 +19,30 @@ function setColor(){
         }
     }
 }
+
+function setupStorage(){
+    localStorage.setItem("tasks", JSON.stringify(taskArray));
+}
+
+// //function Save(){
+//     var storedTasks = JSON.parse(localStorage.getItem("tasks"));
+
+//     if (storedScores !== null) {
+//       taskArray = storedTasks;
+//     }
+
+//     var text = userText.value.trim();
+//     if (text === "") {
+//         return;
+//     }
+
+    
+//     taskArray.push({'time-block':'task':finalScore});
+//     userText.value = "";
+
+//     setupStorage();
+//     pageRedirect();
+// }
 
 //setting the heading to today's date
 $('#currentDay').text(todaysDate)
