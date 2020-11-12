@@ -19,4 +19,4 @@ The following libraries were used to create this project.
 
 # Link to deployed project 
 
-* Link - 
+* [Link to deployed site](https://v-lax.github.io/day-planner/html/index.html)
