@@ -24,27 +24,31 @@ function setupStorage(){
     localStorage.setItem("tasks", JSON.stringify(taskArray));
 }
 
-// //function Save(){
-//     var storedTasks = JSON.parse(localStorage.getItem("tasks"));
+function init(){
+    var storedTasks = JSON.parse(localStorage.getItem("tasks"));
 
-//     if (storedScores !== null) {
-//       taskArray = storedTasks;
-//     }
-
-//     var text = userText.value.trim();
-//     if (text === "") {
-//         return;
-//     }
-
-    
-//     taskArray.push({'time-block':'task':finalScore});
-//     userText.value = "";
-
-//     setupStorage();
-//     pageRedirect();
-// }
-
+    if (storedTasks !== null) {
+        taskArray = storedTasks;
+        for(var i=0;i<taskArray.length;i++){
+            let time = taskArray[i].timeid
+            $(`#time${time}`).children('.description').val(taskArray[i].task)
+        }
+    }
+}
 //setting the heading to today's date
 $('#currentDay').text(todaysDate)
-
 setColor();
+init();
+
+//Functionality to occur everytime save button is clicked
+$('.saveBtn').on('click',function(){
+    var timeId;
+    var inpuText;
+    timeId=$(this).attr('data-id')
+    
+    inputText = $(`#time${timeId}`).children('.description').val()
+
+    taskArray.push({'timeid':timeId,'task':inputText});
+    console.log(taskArray)
+    setupStorage();
+})
