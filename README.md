@@ -14,7 +14,7 @@ The following libraries were used to create this project.
 * JQuery - used to set up color-coding, and other interactive functionality on page. 
 
 # Screenshot of final project
-![Screenshot of Day Planner](.assets/screenshot.png)
+![Screenshot of Day Planner](./assets/screenshot.png)
 
 
 # Link to deployed project 
